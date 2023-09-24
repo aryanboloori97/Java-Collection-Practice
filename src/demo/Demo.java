@@ -11,15 +11,15 @@ public static void main(String[] args) {
 	List<Integer> arrayList1 =  new ArrayList<Integer>();
 	List<Integer> linkedList1 = new LinkedList<Integer>();
 	
-	for (int i=0;i<100;i++) {
+	for (int i=1;i<=100;i++) {
 		
 		arrayList1.add(i);
 		linkedList1.add(i);
 		
 	}		
+	removeElementsFromEnd(arrayList1, 10);
 	
 	System.out.println(arrayList1);
-	addElementsToMiddle(arrayList1, 50);
 	}
 	
 public static void addElementsToBeginning(List<Integer> list, int numberOfElements) {
@@ -55,11 +55,42 @@ public static void addElementsToEnd(List<Integer> list, int numberOfElements) {
 		
 		list.add(i);
 	}
-System.out.println(list);
 
 
 }
+
+public static void removeElementsFromBeginning(List<Integer> list, int numberOfElements) {
 	
+	for (int i=0; i<numberOfElements;i++) {
+		
+		list.remove(0);
+		
+		
+	}
+	
+	
+}
+public static void removeElementsFromMiddle(List<Integer> list, int numberOfElements) {
+	int indexToRemove = (int)(list.size()/2);
+	for (int i=0; i<numberOfElements;i++) {
+		list.remove(indexToRemove);
+	
+		
+	}
+	
+	
+}
+public static void removeElementsFromEnd(List<Integer> list, int numberOfElements) {
+	
+	for (int i=0; i<numberOfElements;i++) {
+		
+		list.remove(list.size()-1);
+		
+		
+	}
+	
+	
+}
 	
 }
 	
