@@ -11,15 +11,18 @@ public static void main(String[] args) {
 	List<Integer> arrayList1 =  new ArrayList<Integer>();
 	List<Integer> linkedList1 = new LinkedList<Integer>();
 	
-	for (int i=1;i<=100;i++) {
+	for (int i=1;i<=1_000_000;i++) {
 		
 		arrayList1.add(i);
 		linkedList1.add(i);
 		
-	}		
-	removeElementsFromEnd(arrayList1, 10);
-	
-	System.out.println(arrayList1);
+	}
+	long start = System.nanoTime();
+	addElementsToEnd(linkedList1, 10_000_00);
+	long delta = (System.nanoTime() - start)/1000;
+	System.out.println(delta);
+
+
 	}
 	
 public static void addElementsToBeginning(List<Integer> list, int numberOfElements) {
@@ -27,7 +30,7 @@ public static void addElementsToBeginning(List<Integer> list, int numberOfElemen
 	
 		
 		for (int i=0; i<numberOfElements; i++) {
-			list.add(i, i);
+			list.add(0, i);
 		}
 
 
